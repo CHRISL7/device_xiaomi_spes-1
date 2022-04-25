@@ -5,6 +5,7 @@
 #
 
 DEVICE_PATH := device/xiaomi/spes
+COMMON_PATH := device/qcom/common
 
 # A/B
 AB_OTA_UPDATER := true
@@ -82,9 +83,6 @@ RELAX_USES_LIBRARY_CHECK=true
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-
-# Configs File System
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
 # Display
 TARGET_USES_COLOR_METADATA := true
@@ -211,8 +209,10 @@ TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
-# QCOM
-BOARD_USES_QCOM_HARDWARE := true
+# QC common
+include $(COMMON_PATH)/BoardConfigQcom.mk
+OVERRIDE_QCOM_HARDWARE_VARIANT := sm8250-common
+TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
 
 # QG user space
 PMIC_QG_SUPPORT := true
