@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/komodo_spes.mk
+    $(LOCAL_DIR)/aosp_spes.mk
 
 COMMON_LUNCH_CHOICES := \
-    komodo_spes-user \
-    komodo_spes-userdebug \
-    komodo_spes-eng
+    aosp_spes-user \
+    aosp_spes-userdebug \
+    aosp_spes-eng
